@@ -131,13 +131,5 @@ python main.py
 
 ---
 
-## Team Contribution
-
-- Member 1: Face Recognition Module  
-- Member 2: Behavioral Analysis + RL  
-- Member 3: Alert & Emergency System  
-
----
-
 ## License
 This project is for academic purposes.

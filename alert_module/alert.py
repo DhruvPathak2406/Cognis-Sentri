@@ -5,8 +5,6 @@ from .communicator import send_telegram
 from .alarm import play_alarm
 from .logger import log_event
 from .arduino import trigger_hardware
-
-
 class AlertSystem:
 
     def __init__(self):
@@ -15,7 +13,9 @@ class AlertSystem:
         self.emergency_sent = False
 
     def execute(self, action, mode):
-
+        if mode == "STOP":
+         print("⚠ System stopped — no alert")
+         return
         current_time = time.time()
 
         if current_time - self.last_alert_time < self.cooldown:
@@ -29,7 +29,6 @@ class AlertSystem:
         message = f"""
 🚨 ALERT LEVEL: {action}
 🕒 Time: {timestamp}
-⚠️ Status: Intruder detected
 """
 
         print("\n" + "="*40)

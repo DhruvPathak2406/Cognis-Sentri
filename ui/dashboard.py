@@ -1,7 +1,11 @@
 import tkinter as tk
 from tkinter import scrolledtext
-from turtle import left, mode
+# from turtle import left, mode
 from alert_module.alert import AlertSystem
+from recognition_module.Afacerecog import recognize_person
+from registration_module.register import register_face
+import tkinter.simpledialog as simpledialog
+import threading
 
 
 class Dashboard:
@@ -54,11 +58,13 @@ class Dashboard:
 
         # -------- Face Registration --------
         tk.Button(left, text="📸 Register Face",
-                  width=25, command=self.fake_register).pack(pady=5)
+    command=self.register_user
+).pack()
 
         # -------- Face Recognition --------
         tk.Button(left, text="👁 Start Recognition",
-                  width=25, command=self.fake_recognition).pack(pady=5)
+              command=lambda: threading.Thread(target=self.start_recognition).start()
+              ).pack()
 
         tk.Button(left, text="🛑 Stop System",
                   width=25, command=self.stop_system).pack(pady=5)
@@ -118,43 +124,62 @@ class Dashboard:
     def update_mode(self):
       mode = self.mode.get()
       self.log(f"🔄 Mode changed to: {mode}")
-      
+
     def update_action(self):
        action = self.action.get()
        self.log(f"🎯 Action changed to: {action}")
 
     # ================= PLACEHOLDER FEATURES =================
 
-    def fake_register(self):
-        self.status_label.config(text="Face Registration Module Ready")
-        self.log("📸 Face Registration UI triggered (module not connected yet)")
+    def register_user(self):
+      name = simpledialog.askstring("Register Face", "Enter name:")
+      if name:
+        self.log(f"📸 Registering {name}...")
+        register_face(name)
+        self.log(f"✅ {name} registered")
 
-    def fake_recognition(self):
-        self.status_label.config(text="Recognition Module Ready")
-        self.log("👁 Recognition system initialized (not connected yet)")
+    def start_recognition(self):
 
+       if self.mode.get() == "STOP":
+        self.log("⚠ System is stopped")
+        return   
+       self.log("📡 Starting recognition...")
+       self.status_label.config(text="Scanning...")
+       person_type, name = recognize_person()
+
+       if person_type == "KNOWN":
+         self.log(f"✅ Authorized: {name}")
+         self.status_label.config(text=f"Authorized: {name}")
+         action = 0
+       else:
+         self.log("🚨 UNKNOWN DETECTED")
+         self.status_label.config(text="Intruder Detected 🚨")
+         action = self.action.get()
+       self.alert.execute(action, self.mode.get())
+       self.log("⚡ Alert system triggered")
+     
     def stop_system(self):
         self.status_label.config(text="System Stopped")
         self.log("🛑 System stopped")
+    def simulate_alert(self):
+       action = self.action.get()
+       mode = self.mode.get()
+       self.log(f"⚡ Simulating → Action: {action}, Mode: {mode}")
+       self.alert.execute(action, mode)
 
     # ================= REAL ALERT SYSTEM =================
 
+    
     def trigger_alert(self):
-
-        mode = self.mode.get()
-        action = self.action.get()
-
-        self.log(f"⚙ Mode selected: {mode}")
-        self.log(f"🎯 Action selected: {action}")
-
-        if mode == "STOP":
-           self.log("⚠ System is stopped")
-           return
-
-        self.status_label.config(text="Processing Event...")
-        self.alert.execute(action, mode)
-        self.log("✅ Alert executed")
-
+       mode = self.mode.get()
+       action = self.action.get()
+       if mode == "STOP":
+        self.log("⚠ System is stopped")
+        return
+       self.log(f"⚡ Simulating Intruder → Mode: {mode}, Action: {action}")
+       self.status_label.config(text="Simulating Alert...")
+       self.alert.execute(action, mode)
+       self.log("✅ Simulation complete")
 
 # ================= RUN =================
 if __name__ == "__main__":

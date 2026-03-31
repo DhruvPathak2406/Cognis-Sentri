@@ -26,3 +26,90 @@
 🕒 Time: 18:05:17
 ⚠️ Status: Intruder detected
 
+[2026-03-30 16:37:09.220150] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 16:37:08
+⚠️ Status: Intruder detected
+
+[2026-03-30 16:41:55.698620] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 16:41:55
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:12:28.647455] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 17:12:26
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:23:37.286340] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 17:23:36
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:26:35.903802] [NOTIFY] 
+🚨 ALERT LEVEL: 1
+🕒 Time: 17:26:34
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:26:47.167277] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 17:26:45
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:27:30.478595] [NOTIFY] 
+🚨 ALERT LEVEL: 1
+🕒 Time: 17:27:29
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:27:40.536638] [NOTIFY] 
+🚨 ALERT LEVEL: 1
+🕒 Time: 17:27:38
+⚠️ Status: Intruder detected
+
+[2026-03-30 17:27:50.474449] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 17:27:48
+⚠️ Status: Intruder detected
+
+[2026-03-30 18:26:09.096044] [NOTIFY] 
+🚨 ALERT LEVEL: 1
+🕒 Time: 18:26:07
+⚠️ Status: Intruder detected
+
+[2026-03-30 18:26:22.311314] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 18:26:20
+⚠️ Status: Intruder detected
+
+[2026-03-30 18:29:07.993928] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 18:29:05
+⚠️ Status: Intruder detected
+
+[2026-03-30 18:35:32.343227] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 18:35:28
+⚠️ Status: Intruder detected
+
+[2026-03-31 16:43:29.544191] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 16:42:38
+⚠️ Status: Intruder detected
+
+[2026-03-31 17:13:18.320401] [EMERGENCY] 
+🚨 ALERT LEVEL: 3
+🕒 Time: 17:13:14
+⚠️ Status: Intruder detected
+
+[2026-03-31 18:47:33.833942] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 18:47:31
+
+[2026-03-31 18:48:06.502895] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 18:48:04
+
+[2026-03-31 18:50:54.729455] [ALARM] 
+🚨 ALERT LEVEL: 2
+🕒 Time: 18:50:52
+
